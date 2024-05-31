@@ -4,6 +4,8 @@ import { Highlight } from "@/components/Highlight";
 import { GroupCard } from "@/components/GroupCard";
 import { useState } from "react";
 import { FlatList } from "react-native";
+import { ListEmpty } from "@/components/ListEmpty";
+import { Button } from "@/components/Button";
 
 
 export function Groups() {
@@ -24,12 +26,13 @@ export function Groups() {
         renderItem={({ item }) => (
           <GroupCard  
             titleText={item}
-          
           />
         )}
+        ListEmptyComponent={() => <ListEmpty message="Que tal cadastrar sua primeira turma?" />}
+        contentContainerStyle={groups.length === 0 && {flex: 1}}
       />
 
-     
+     <Button title="Criar nova turma" />
     </Container>
   );
 }
