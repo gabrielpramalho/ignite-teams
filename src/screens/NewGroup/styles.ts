@@ -9,6 +9,5 @@ export const Container = styled(SafeAreaView)`
 
 export const Content = styled.View`
   flex: 1;
-  background-color: red;
   justify-content: center;
 `
